@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HomeController {
-    private int coffeeId = 0;
 
     @GetMapping("/")
     public String home() {
@@ -19,13 +18,6 @@ public class HomeController {
     @GetMapping("/coffeelover")
     public String coffeeLover() {
         return "I like coffee!";
-    }
-
-    @GetMapping("/coffee")
-    public ResponseEntity<Coffee> coffee(@RequestParam(value = "name",
-            defaultValue = "latte") String name) {
-        Coffee coffee = new Coffee(coffeeId++, name);
-        return new ResponseEntity<>(coffee, HttpStatus.OK);
     }
 
 }

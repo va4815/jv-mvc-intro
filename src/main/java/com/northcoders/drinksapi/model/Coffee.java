@@ -4,4 +4,4 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public record Coffee(int id, String name) { }
+public record Coffee(long id, String name) { }

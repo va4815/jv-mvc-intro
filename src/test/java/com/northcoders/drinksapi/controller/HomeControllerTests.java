@@ -51,25 +51,4 @@ public class HomeControllerTests {
                     .andExpect(MockMvcResultMatchers.content().string(expectedContent));
         }
 
-    @Test
-    public void testCoffeeLatteCappucino() throws Exception {
-
-        // Arrange
-        Coffee latte = new Coffee(0, "latte");
-        Coffee cappucino = new Coffee(1, "cappucino");
-
-        // Act 1
-        this.mockMvcController.perform(
-                        //Make a GET request to the '/' endpoint
-                        MockMvcRequestBuilders.get("/coffee"))
-                .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.name").value(latte.name()));
-
-        // Act 2
-        this.mockMvcController.perform(
-                        MockMvcRequestBuilders.get("/coffee")
-                                .param("name", "cappucino"))
-                .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.name").value(cappucino.name()));
-    }
 }
