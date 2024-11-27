@@ -9,4 +9,10 @@ public class HomeController {
     public String home() {
         return "Welcome to the Drinks API!";
     }
+
+    @GetMapping("/coffeelover")
+    public String coffeeLover() {
+        return "I like coffee!";
+    }
+
 }

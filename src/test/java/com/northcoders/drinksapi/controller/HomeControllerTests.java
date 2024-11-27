@@ -37,4 +37,16 @@ public class HomeControllerTests {
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.content().string(expectedContent));
     }
+        @Test
+        public void testCoffeeLover() throws Exception {
+            //Arrange, Act and Assert chained within the following statements
+
+            String expectedContent = "I like coffee!";
+
+            this.mockMvcController.perform(
+                            //Make a GET request to the '/' endpoint
+                            MockMvcRequestBuilders.get("/coffeelover"))
+                    .andExpect(MockMvcResultMatchers.status().isOk())
+                    .andExpect(MockMvcResultMatchers.content().string(expectedContent));
+        }
 }
