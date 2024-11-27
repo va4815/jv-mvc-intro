@@ -1,4 +1,4 @@
-package com.northcoders.jv_mvc_intro;
+package com.northcoders.drinksapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
